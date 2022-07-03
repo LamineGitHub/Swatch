@@ -1,0 +1,68 @@
+@use "../utils/mixins" as m;
+@use "../utils/fonctions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.card {
+  width: 20%;
+  margin: 0 f.em(50);
+  padding: f.rem(10);
+  position: relative;
+  cursor: pointer;
+  @include b.md {
+    width: 50%;
+    margin: f.rem(25) f.em(15);
+  }
+  @include b.ml {
+    width: 80%;
+    margin: f.rem(20) 0;
+  }
+
+  img {
+    margin-bottom: f.rem(7);
+    height: f.rem(120);
+    background-color: v.$tertiaire-color;
+    padding: f.em(20);
+    border-radius: f.rem(100);
+  }
+
+  h2 {
+    margin-bottom: f.rem(10);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: f.rem(0.5);
+    left: 0;
+    display: block;
+    border-radius: f.rem(10);
+    height: 3px;
+    width: 100%;
+    background-color: v.$main-color;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform v.$transition 0.2s;
+  }
+  &:hover::before {
+    transform: scale(1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: f.rem(15) f.rem(15) 0 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: v.$tertiaire-color;
+    transition: all v.$transition;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}

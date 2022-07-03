@@ -1,0 +1,72 @@
+@use "../utils/fonctions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.btn {
+  width: f.rem(180);
+  letter-spacing: f.rem(0.5);
+  background-color: v.$main-color;
+  padding: f.rem(10);
+  margin-top: f.rem(30);
+  border-radius: f.em(5);
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  @include b.ml {
+    left: 23%;
+  }
+  @include b.mm {
+    left: 20%;
+  }
+  @include b.ms {
+    left: 15%;
+  }
+  a {
+    color: #fff;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: f.em(5);
+    z-index: -1;
+    box-shadow: 0 5px 10px rgba(18, 18, 18, 0.7);
+    opacity: 0;
+    transition: v.$transition;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+.lien {
+  letter-spacing: f.rem(1);
+  transition: all v.$transition;
+  @include b.md {
+    transform: translateX(f.rem(210));
+  }
+  @include b.ml {
+    transform: translateX(0);
+  }
+  @include b.mm {
+    transform: translateX(f.rem(5));
+  }
+}
+.lien:hover {
+  letter-spacing: f.rem(5);
+}
+
+.submits {
+  input {
+    transition: v.$transition;
+  }
+  input:hover {
+    letter-spacing: f.rem(2);
+  }
+}

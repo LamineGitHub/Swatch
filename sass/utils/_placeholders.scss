@@ -1,0 +1,16 @@
+@use "variables" as v;
+@use "fonctions" as f;
+@use "../page/breakpoints" as b;
+
+%sizeh1 {
+  font-size: f.rem(45);
+  line-height: f.em(18);
+  color: v.$secondary-color;
+  @include b.md {
+    font-size: f.rem(35);
+  }
+  @include b.ml {
+    font-size: f.rem(32);
+
+  }
+}

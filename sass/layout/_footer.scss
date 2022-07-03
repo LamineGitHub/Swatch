@@ -1,0 +1,97 @@
+@use "../utils/mixins" as m;
+@use "../utils/fonctions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+svg {
+  position: relative;
+  bottom: 0;
+  top: 28px;
+  @include b.md {
+    top: 20px;
+  }
+  @include b.ml {
+    top: 15px;
+  }
+}
+
+.footer {
+  background-color: v.$main-color;
+  color: #f8f8f8;
+  @include b.ml {
+    width: 100%;
+  }
+
+  &__container {
+    @include m.flex(space-between);
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 f.rem(60);
+    padding-bottom: f.rem(30);
+    @include b.ml {
+      @include m.flex(space-between, column);
+      width: 100%;
+      padding: f.rem(10) f.rem(40);
+    }
+  }
+
+  &__logo {
+    width: 40%;
+    @include b.md {
+      margin-top: f.rem(40);
+    }
+    @include b.ml {
+      width: 100%;
+      margin-bottom: f.rem(30);
+      text-align: center;
+    }
+    img {
+      cursor: pointer;
+      height: 50px;
+    }
+  }
+  &__links {
+    width: 45%;
+    margin-top: f.rem(20);
+    @include m.flex(space-around);
+    text-align: center;
+    @include b.md {
+      width: 50%;
+      justify-content: space-around;
+    }
+    @include b.ml {
+      width: 100%;
+      margin: 0;
+    }
+    @include b.mm {
+      justify-content: space-between;
+    }
+
+    a {
+      margin: f.rem(5);
+      position: relative;
+      display: inline-block;
+      color: #f8f8f8;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        transform: scale(0);
+        transform-origin: left;
+        transition: transform v.$transition;
+      }
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+    h3 {
+      margin-bottom: f.rem(10);
+    }
+  }
+}

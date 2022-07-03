@@ -1,0 +1,58 @@
+@use "../utils/variables" as v;
+@use "../utils/placeholders" as p;
+@use "../utils/mixins" as m;
+@use "../page/breakpoints" as b;
+@use "../utils/fonctions" as f;
+
+body {
+  font-family: poppins, sans-serif;
+  /*   color: v.$main-color; */
+}
+.nav__links {
+  a {
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+}
+.texts {
+  h1 {
+    @extend %sizeh1;
+  }
+  p {
+    color: v.$secondary-text-color;
+  }
+}
+.top {
+  h1 {
+    @extend %sizeh1;
+    text-align: center;
+  }
+}
+.card {
+  h2 {
+    text-transform: capitalize;
+    color: v.$main-text-color;
+  }
+  p {
+    color: v.$secondary-text-color;
+  }
+}
+.texts {
+
+    @include b.ml {
+    p {
+      width: 80%;
+      margin: f.rem(5) auto;
+    }
+  }
+} 
+form {
+  text-transform: capitalize;
+  input {
+    font-size: f.rem(18);
+  }
+  textarea {
+    font-size: f.rem(18);
+    font-family: poppins, serif;
+  }
+}

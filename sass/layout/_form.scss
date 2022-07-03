@@ -1,0 +1,114 @@
+@use "../utils/mixins" as m;
+@use "../utils/fonctions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+form {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: f.rem(10);
+  padding: f.rem(20);
+  background-color: #fff;
+  @include b.ml {
+    width: 80%;
+
+  }
+
+  .labels {
+    float: left;
+    width: 50%;
+    @include b.md {
+      float: both;
+      width: 100%;
+    }
+  }
+
+  .textarea {
+    float: right;
+    width: 50%;
+    @include b.md {
+      float: both;
+      width: 100%;
+    }
+  }
+
+  .submits {
+    clear: both;
+    margin-top: f.rem(0);
+  }
+
+  label {
+    display: block;
+    margin-bottom: f.rem(8);
+  }
+
+  input[type="name"],
+  input[type="email"],
+  input[type="tel"] {
+    display: block;
+    border-radius: f.rem(5);
+    border: 2px solid #bababa;
+    background-color: v.$tertiaire-color;
+    width: 90%;
+    @include b.md {
+      width: 100%;
+    }
+    height: f.rem(38);
+    padding: f.rem(5);
+    margin-bottom: f.rem(20);
+    transition: all v.$transition;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &:focus {
+      border: 2px solid v.$main-color;
+      box-shadow: 0 0 15px lighten($color: v.$main-color, $amount: 10%);
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: f.rem(225);
+    width: 100%;
+    border: 2px solid #bababa;
+    padding: f.rem(5);
+    border-radius: f.rem(5);
+    transition: all v.$transition;
+    background-color: v.$tertiaire-color;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &:focus {
+      border: 2px solid v.$main-color;
+    }
+    &:focus {
+      border: 2px solid v.$main-color;
+      box-shadow: 0 0 15px lighten($color: v.$main-color, $amount: 10%);
+    }
+  }
+
+  input[type="submit"] {
+    border: none;
+    padding: f.rem(15);
+    margin: f.rem(15) 35%;
+    @include b.md {
+      margin: f.rem(15) 29%;
+    }
+    @include b.ml {
+      margin: f.rem(15) -3%;
+    }
+    @include b.mm {
+      margin: f.rem(15) -6%;
+
+    }
+
+    &:hover {
+      background-color: none;
+      box-shadow: 0 0 10px black;
+    }
+  }
+}

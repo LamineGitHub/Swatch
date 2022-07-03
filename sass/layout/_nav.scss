@@ -1,0 +1,88 @@
+@use "../utils/mixins" as m;
+@use "../utils/fonctions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.nav {
+  @include m.flex(space-between);
+  padding: f.rem(10) f.rem(60);
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: f.rem(40);
+  @include b.md {
+    flex-direction: column;
+    padding: 0 f.rem(20);
+    margin-bottom: f.rem(70);
+  }
+
+  &__logo {
+    cursor: pointer;
+
+    img {
+      height: 50px;
+      @include b.md {
+        height: 80px;
+      }
+      @include b.ml {
+        height: 60px;
+      }
+    }
+  }
+
+  &__links {
+    @include b.md {
+      width: 100%;
+      text-align: center;
+      margin: f.rem(10);
+    }
+    @include b.ml {
+      @include m.flex(space-between, column);
+      margin: 0 0 f.rem(10) 0;
+    }
+    a {
+      @include b.md {
+        margin: f.rem(10);
+      }
+      margin: f.rem(20);
+      position: relative;
+      transition: color v.$transition;
+      color: v.$main-text-color;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: v.$main-color;
+        transform: scale(0);
+        transform-origin: left;
+        transition: transform v.$transition;
+      }
+      &:hover {
+        color: v.$main-color;
+        // transition: color v.$transition;
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+    span {
+      border: 2px solid v.$main-color;
+      margin-left: f.em(40);
+      padding: f.rem(10) f.rem(5);
+      border-radius: f.rem(5);
+      @include b.md {
+        margin-left: f.em(30);
+        padding: f.rem(5) f.rem(1);
+      }
+      @include b.ml {
+        margin: f.rem(10) 0 0 f.rem(5);
+      }
+      a {
+        color: v.$main-color;
+      }
+    }
+  }
+}
