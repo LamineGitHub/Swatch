@@ -30,6 +30,10 @@
   }
 
   &__links {
+
+    @include b.breakpoints(542px) {
+      @include m.flex(space-between, column);
+    }
     @include b.md {
       width: 100%;
       text-align: center;
@@ -43,7 +47,11 @@
       @include b.md {
         margin: f.rem(10);
       }
-      margin: f.rem(20);
+      @include b.breakpoints(890px){
+        margin: f.rem(5);
+        
+      }
+      margin: f.rem(10);
       position: relative;
       transition: color v.$transition;
       color: v.$main-text-color;
@@ -73,6 +81,15 @@
       margin-left: f.em(40);
       padding: f.rem(10) f.rem(5);
       border-radius: f.rem(5);
+      @include b.breakpoints(540px){
+        margin-right: f.em(20);
+        
+      }
+      @include b.breakpoints(830px){
+        margin-left: f.em(10);
+        padding: f.rem(3) 0;
+
+      }
       @include b.md {
         margin-left: f.em(30);
         padding: f.rem(5) f.rem(1);

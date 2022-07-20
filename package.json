@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss:./css/style.css"
+    "sass": "sass ./sass/style.scss:./dist/style.css -w --style compressed --no-source-map",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LamineGitHub/Swatch.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mamadou Lamine Diallo",
   "license": "ISC",
-  "left": ""
+  "left": "",
+  "browserslist": "last 4 versions"
 }

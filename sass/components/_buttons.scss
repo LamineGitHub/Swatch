@@ -46,20 +46,31 @@
   }
 }
 .lien {
+  display: block;
   letter-spacing: f.rem(1);
   transition: all v.$transition;
-  @include b.md {
-    transform: translateX(f.rem(210));
-  }
-  @include b.ml {
-    transform: translateX(0);
-  }
-  @include b.mm {
-    transform: translateX(f.rem(5));
+
+  @include b.breakpoints(542px) {
+    margin: f.rem(20) auto;
   }
 }
 .lien:hover {
   letter-spacing: f.rem(5);
+}
+
+.modif {
+  @include b.breakpoints(765px) {
+    margin: f.rem(15) auto;
+  }
+  @include b.ml {
+    transform: translateX(-80px);
+  }
+  @include b.mm {
+    transform: translateX(-60px);
+  }
+  @include b.ms {
+    transform: translateX(-40px);
+  }
 }
 
 .submits {

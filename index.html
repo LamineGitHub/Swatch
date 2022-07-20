@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Swatch</title>
   </head>
 
@@ -15,10 +16,14 @@
     <div class="section_1">
       <header class="header">
         <nav class="nav">
-          <div class="nav__logo">
+          <div class="nav__logo"
+          data-aos="fade-down" 
+          data-aos-duration="700">
             <img src="./img/Swatch-logo.png" alt="logo Swatch" />
           </div>
-          <div class="nav__links">
+          <div class="nav__links" 
+          data-aos="fade-down" 
+          data-aos-duration="1100" >
             <a href="#">how it works</a>
             <a href="#">features</a>
             <a href="#">about</a>
@@ -30,16 +35,17 @@
       </header>
       <div class="container">
         <section class="texts">
-          <h1>Time financial saving app</h1>
-          <p>
+        <h1 data-aos="zoom-in-right" data-aos-delay="500" data-aos-easing="ease-in-out">
+        Time financial saving app</h1>
+        <p data-aos="zoom-in-right" data-aos-delay="700" data-aos-easing="ease-in-out" data-aos-anchor-placement="top-bottom">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
             molestias animi voluptas sed aut.
           </p>
-          <div class="btn">
+          <div class="btn join">
             <a href="#"> join the watchlist </a>
           </div>
         </section>
-        <section class="imgs">
+        <section class="imgs" data-aos="fade-left" data-aos-duration="1500">
           <img src="./img/phone.png" alt="telephone" />
         </section>
       </div>
@@ -49,17 +55,17 @@
         <h1>All your financial and banking services in one place</h1>
       </section>
       <section class="bottom">
-        <div class="card">
+        <div class="card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" >
           <img src="./img/icon-1.png" alt="spend" />
           <h2>spend</h2>
           <p>sed ut perspiciatis unde omnis iste natus error</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="flip-left" data-aos-duration="1000" >
           <img src="./img/icon-2.png" alt="invest" />
           <h2>invest</h2>
           <p>sed ut perspiciatis unde omnis iste natus error</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
           <img src="./img/icon-3.png" alt="save" />
           <h2>save</h2>
           <p>sed ut perspiciatis unde omnis iste natus error</p>
@@ -68,16 +74,16 @@
     </div>
 
     <div class="section_3">
-      <div class="imgs">
+      <div class="imgs" data-aos="zoom-out-right" data-aos-duration="1000" data-aos-delay="500">
         <img src="./img/Investing.png" alt="Investing" />
       </div>
-      <div class="texts">
-        <h1>Stay focuse on your finance</h1>
-        <p>
+      <div class="texts" >
+        <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0">Stay focuse on your finance</h1>
+        <p data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
           voluptatem dolor dignissimos temporibus repudiandae expedita?
         </p>
-        <div class="btn lien">
+        <div class="btn lien modif" >
           <a href="#">see more</a>
         </div>
       </div>
@@ -85,14 +91,14 @@
 
     <div class="section_4">
       <div class="texts">
-        <h1>All your money in one app</h1>
-        <p>
+        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">All your money in one app</h1>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
           voluptatem dolor dignissimos temporibus repudiandae expedita?
         </p>
-        <div class="btn lien"><a href="#">see more</a></div>
+        <div class="btn lien modif"><a href="#">see more</a></div>
       </div>
-      <div class="imgs">
+      <div class="imgs" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="500">
         <img src="./img/Transfer_money.png" alt="" />
       </div>
     </div>
@@ -103,7 +109,7 @@
         <p>Contact us for a quote, help ot to join team</p>
       </div>
 
-      <form action="#">
+      <form action="#" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-delay="500">
         <div class="labels">
           <label for="name">your name </label>
           <input type="name" id="name" placeholder="Lamine" required />
@@ -166,5 +172,9 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

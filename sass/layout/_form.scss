@@ -9,7 +9,7 @@ form {
   border-radius: f.rem(10);
   padding: f.rem(20);
   background-color: #fff;
-  @include b.ml {
+  @include b.breakpoints(542px) {
     width: 80%;
 
   }
@@ -97,6 +97,9 @@ form {
     margin: f.rem(15) 35%;
     @include b.md {
       margin: f.rem(15) 29%;
+    }
+    @include b.breakpoints(542px){
+      margin: f.rem(15) 19%;
     }
     @include b.ml {
       margin: f.rem(15) -3%;
